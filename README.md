@@ -1,6 +1,6 @@
 # Chat en tiempo real
 
-Creación de una App de mensajería instantanea integrando React con librerías como Socket.IO y TailWind. 
+Creación de una App de mensajería instantánea integrando React con librerías como Socket.IO y TailWind. 
 
 ## Instalación backend
 
