@@ -30,19 +30,30 @@ function App() {
         setMessages((state) => [...state, message]);
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className='h-screen bg-zinc-800 text-white flex items-center justify-center'>
+            <form onSubmit={handleSubmit} className='bg-zinc-900 p-10'>
+                <h1 className='text-2xl font-bold my-2'>Chat de casa</h1>
                 <input
                     type='text'
                     placeholder='Write your message...'
                     onChange={(e) => setMessage(e.target.value)}
+                    className='border-2 border-zinc-500 p-2 w-full text-black'
+                    value={message}
+                    autoFocus
                 />
                 <button>Send</button>
             </form>
 
-            <ul>
+            <ul className='h-80 overflow-y-auto'>
                 {messages.map((message, i) => (
-                    <li key={i}>
+                    <li
+                        key={i}
+                        className={`my-2 p-2 table text-sm rounded-md ${
+                            message.from === 'Me'
+                                ? 'bg-sky-700 ml-auto'
+                                : 'bg-black'
+                        }`}
+                    >
                         {message.from}:{message.body}
                     </li>
                 ))}
